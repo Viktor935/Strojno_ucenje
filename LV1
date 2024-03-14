@@ -1,0 +1,54 @@
+#LV1 Zad1
+def total_euro(radni_h, euro_h):
+    total=radni_h*euro_h
+    return(total)
+
+radni_h=float(input("Radni h: "))
+euro_h=float(input("Euro po sati: "))
+ukupno=total_euro(radni_h,euro_h)
+print("Ukupno je: ", ukupno)
+
+#LV1 Zad2
+def kategorija_ocijene(ocijena):
+    if ocijena>= 0.9 and ocijena <=1.0:
+        return "A"
+    elif ocijena >= 0.8:
+        return "B"
+    elif ocijena >= 0.7:
+        return "C"
+    elif ocijena >= 0.6:
+        return "D"
+    elif ocijena >= 0.0 and ocijena < 0.6:
+        return "F"
+    else:
+        return "Neispravan unos"
+
+ocijena=-1.0
+while(ocijena < 0.0 or ocijena > 1.0):
+    ocijena=float(input("Unesite ocijenu: "))
+    if ocijena < 0.0 or ocijena > 1.0:
+        print("Ocijena mora bit između 0 i 1, unesite ponovno")
+        
+kategorija=kategorija_ocijene(ocijena)
+print("Kategorija ocijene je: ", kategorija)
+
+#LV1 Zad3
+def operacije(brojevi):
+    br_broj=len(brojevi)
+    print("Brojevi koje ste unijeli:", brojevi)
+    print("Broj unesenih brojeva: ",br_broj)
+    print("Srednja vrijednost brojeva:", sum(brojevi)/br_broj)
+    print("Minimalna vrijednost brojeva: ", min(brojevi))
+    print("Maksimalna vrijednost brojeva: ", max(brojevi))
+    
+
+brojevi=[]
+br_broj=0
+ulaz=0
+while(True):
+    ulaz=input("Unesite broj ili Done za kraj unosa:")
+    if(ulaz=="Done"):
+        break
+    broj=float(ulaz)
+    brojevi.append(broj)
+operacije(brojevi)
